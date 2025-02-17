@@ -1,0 +1,38 @@
+# Ignore node_modules
+node_modules/
+
+# Ignore build files
+dist/
+build/
+.next/
+out/
+
+# Ignore logs
+*.log
+npm-debug.log*
+
+# Ignore environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignore Docker files and images
+docker-compose.override.yml
+.dockerignore
+*.log
+
+# Ignore IDE and OS-specific files
+.vscode/
+.idea/
+.DS_Store
+
+# Ignore coverage reports (for testing)
+coverage/
+
+# Ignore package-locks for the root (you can keep them in the frontend and backend if needed)
+package-lock.json
+
+# Ignore yarn.lock if using yarn
+yarn.lock
