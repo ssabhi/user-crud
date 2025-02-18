@@ -14,7 +14,7 @@ export default function AddUser() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/user", user);
+      await axios.post(process.env.NEXT_PUBLIC_API_URL+"user", user);
       router.push("/");
     } catch (error) {
       console.error(error);

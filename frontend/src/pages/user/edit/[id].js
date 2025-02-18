@@ -10,7 +10,7 @@ export default function EditUser() {
 
   useEffect(() => {
     if (id) {
-      axios.get(`http://localhost:5000/user/${id}`)
+      axios.get(process.env.NEXT_PUBLIC_API_URL+`user/${id}`)
         .then(response => setUser(response.data))
         .catch(error => console.error(error));
     }
@@ -24,7 +24,7 @@ export default function EditUser() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/user/${id}`, user);
+      await axios.put(process.env.NEXT_PUBLIC_API_URL+`user/${id}`, user);
       router.push(`/user/${id}`);
     } catch (error) {
       console.error(error);

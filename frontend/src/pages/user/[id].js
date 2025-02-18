@@ -9,7 +9,7 @@ export default function UserDetail() {
 
   useEffect(() => {
     if (id) {
-      axios.get(`http://localhost:5000/user/${id}`)
+      axios.get(process.env.NEXT_PUBLIC_API_URL+`user/${id}`)
         .then(response => setUser(response.data))
         .catch(error => console.error(error));
     }
@@ -17,7 +17,7 @@ export default function UserDetail() {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/user/${id}`);
+      await axios.delete(process.env.NEXT_PUBLIC_API_URL+`user/${id}`);
       alert("User deleted successfully");
       router.push("/");  // Redirect back to the user list after deletion
     } catch (error) {
@@ -44,10 +44,10 @@ export default function UserDetail() {
             Delete User
           </button>
 
-          <Link href={`/user/edit/${user._id}`}>
-            <a className="text-white bg-blue-500 hover:bg-blue-700 py-2 px-4 rounded-md">
+          <Link href={`/user/edit/${user._id}`}
+            className="text-white bg-blue-500 hover:bg-blue-700 py-2 px-4 rounded-md">
               Edit User
-            </a>
+            
           </Link>
         </div>
       </div>
