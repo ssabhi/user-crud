@@ -7,7 +7,7 @@ export default function Home() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/user")
+    axios.get("http://172.31.12.227:5000/user")
       .then(response => setUsers(response.data))
       .catch(error => console.error(error));
   }, []);
