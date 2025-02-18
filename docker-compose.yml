@@ -9,7 +9,7 @@ services:
       - backend
     environment:
       - NEXT_PUBLIC_API_URL=http://localhost:5000/
-    network-mode: "host"
+    network_mode: "host"
 
   backend:
     build: ./backend
